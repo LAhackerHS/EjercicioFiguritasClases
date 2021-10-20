@@ -154,6 +154,14 @@ let miCirculitoColor;
 let miRombitoColor;
 let miCuadraditoColor;
 
+let selectCircle;
+let selectTriangle; 
+let selectRombo; 
+let selectSquare; 
+
+let validar;
+
+
 function setup() {
   createCanvas(800,1000);
 
@@ -164,10 +172,10 @@ function setup() {
   miCuadradito = new Cuadradito (600,600,100,100);
 
 //Figuritas Color
-  miCirculitoColor =new CirculitoColor(200,850,100);
-  miTriangulitoColor = new TriangulitoColor (550,250,650,250,600,160);
-  miRombitoColor = new RombitoColor (200,670,150,600,200,530,250,600);
-  miCuadraditoColor = new CuadraditoColor (600,600,200,200);
+  miCirculitoColor =new CirculitoColor(150,880,100);
+  miTriangulitoColor = new TriangulitoColor (250,920,350,920,300,830);
+  miRombitoColor = new RombitoColor (450,950,400,880,450,810,500,880);
+  miCuadraditoColor = new CuadraditoColor (600,875,100,100);
 
   
 }
@@ -223,14 +231,77 @@ fill(220);
   // Figuritas Color
 
 //Circulito
-fill(245,145,145); 
-miCirculito.pintar();
+noStroke();
+fill(255,155,155); 
+miCirculitoColor.pintar();
+
+//Triangulito
+noStroke();
+fill(199,234,70); 
+miTriangulitoColor.pintar();
+
+//Rombito
+noStroke();
+fill(245,217,76); 
+miRombitoColor.pintar();
+
+//Cuadradito
+noStroke();
+fill(198,210,240); 
+rectMode(CENTER);
+miCuadraditoColor.pintar();
   
 }
 
+function mousePressed() {
+//Circle
+if (dist(mouseX, mouseY, x, y)<25) {
+  selectCircle= true;
+}
 
+/**
+//Triangle
+if (dist(mouseX, mouseY, x2, y2)<25) {
+  select2= true; 
+}
+//Rombo
+if (dist(mouseX, mouseY, x1, y1)<25) {
+  select1= true; 
+}
+//Square
+if (dist(mouseX, mouseY, x1, y1)<25) {
+  select1= true; 
 
+**/
 
+function mouseDragged() {
+  if (selectCircle== true)
+	{
+		x= mouseX;
+		y=mouseY; 
+		
+	
+	if (dist(mouseX, mouseY, 200,200)<45) {
+		validar="Correcto";
+	}
+  }
+
+}
+}
+
+  /** 
+	if (dist(mouseX, mouseY, x5, y5)<45) {
+		c5=c1;
+}
+	if (dist(mouseX, mouseY, x6, y6)<45) {
+		c6=c1;
+
+let selectCircle;
+let selectTriangle; 
+let selectRombo; 
+let selectSquare; 
+
+let validar;
 
 
 //let correcto = true;
@@ -239,4 +310,4 @@ miCirculito.pintar();
 //if dist()
 //if este pertenece a Triangulito && Triangulito {correcto =true
 //else{correcto =false
-
+**/
